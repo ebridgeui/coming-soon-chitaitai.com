@@ -1,0 +1,91 @@
+<html>
+   <header>
+      <title>Chitaitai Floorcare</title>
+		
+		<style>
+		/* Style the video: 100% width and height to cover the entire window */
+		#myVideo {
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  min-width: 100%; 
+		  min-height: 100%;
+		}
+		
+		/* Add some content at the bottom of the video/page */
+		.content {
+		  position: fixed;
+		  bottom: 0;
+		  background: rgba(0, 0, 0, 0.5);
+		  color: #f1f1f1;
+		  width: 100%;
+		  padding: 20px;
+		}
+		
+		/* Style the button used to pause/play the video */
+		.button-class {
+		  width: 200px;
+		  font-size: 18px;
+		  padding: 10px;
+		  border: none;
+		  background: #000;
+		  color: #fff;
+		  cursor: pointer;
+		}
+		
+		.button-class:hover {
+		  background: #ddd;
+		  color: black;
+		}
+		</style>
+		<script>
+		// Get the video
+		var video = document.getElementById("myVideo");
+		
+		// Get the button
+		var btn = document.getElementById("myBtn");
+		
+		// Pause and play the video, and change the button text
+		function pauseVideo() {
+                  var video=document.getElementById("myVideo")
+		  if (video.paused) {
+		    video.play();
+		    btn.innerHTML = "Pause";
+		  } else {
+		    video.pause();
+		    btn.innerHTML = "Play";
+		  }
+		}
+function toggleMute() {
+
+var video=document.getElementById("myVideo")
+
+if(video.muted){
+	video.muted = false;
+} else {
+	video.muted = true;
+}
+
+}
+                function unmute() {
+                   var video=document.getElementById("myVideo")
+                   video.muted = false;
+		}
+		</script>
+		
+</header>
+<body>
+		       <!-- The video -->
+	       <video autoplay muted loop id="myVideo">
+		  <source src="videos/chitaitai.main.advert.mp4" type="video/mp4">
+		</video>
+		<!-- Optional: some overlay text to describe the video -->
+		<div class="content">
+		  <h1>Website Under Facelift</h1>
+		  <p>till 17 April 2019</p>
+		  <button id="toggle-mute" class="button-class" onclick="toggleMute();">Volume On/Off</button>
+		  <button id="myBtn" class="button-class" onclick="pauseVideo()">Pause</button>
+		</div>
+		
+</body>
+</html>
